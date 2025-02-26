@@ -21,6 +21,7 @@ import {getConfig} from '@salesforce/pwa-kit-runtime/utils/ssr-config'
 import {proxyBasePath} from '@salesforce/pwa-kit-runtime/utils/ssr-namespace-paths'
 import {createUrlTemplate} from '@salesforce/retail-react-app/app/utils/url'
 import createLogger from '@salesforce/pwa-kit-runtime/utils/logger-factory'
+import {getAssetUrl} from '@salesforce/pwa-kit-react-sdk/ssr/universal/utils'
 
 import {CommerceApiProvider} from '@salesforce/commerce-sdk-react'
 import {withReactQuery} from '@salesforce/pwa-kit-react-sdk/ssr/universal/components/with-react-query'
@@ -28,6 +29,7 @@ import {useCorrelationId} from '@salesforce/pwa-kit-react-sdk/ssr/universal/hook
 import {getAppOrigin} from '@salesforce/pwa-kit-react-sdk/utils/url'
 import {ReactQueryDevtools} from '@tanstack/react-query-devtools'
 import {DEFAULT_DNT_STATE} from '@salesforce/retail-react-app/app/constants'
+import Seo from '@salesforce/retail-react-app/app/components/seo'
 
 /**
  * Use the AppConfig component to inject extra arguments into the getProps
@@ -50,25 +52,30 @@ const AppConfig = ({children, locals = {}}) => {
     const passwordlessCallback = locals.appConfig.login?.passwordless?.callbackURI
 
     return (
-        <CommerceApiProvider
-            shortCode={commerceApiConfig.parameters.shortCode}
-            clientId={commerceApiConfig.parameters.clientId}
-            organizationId={commerceApiConfig.parameters.organizationId}
-            siteId={locals.site?.id}
-            locale={locals.locale?.id}
-            currency={locals.locale?.preferredCurrency}
-            redirectURI={`${appOrigin}/callback`}
-            proxy={`${appOrigin}${commerceApiConfig.proxyPath}`}
-            headers={headers}
-            defaultDnt={DEFAULT_DNT_STATE}
-            logger={createLogger({packageName: 'commerce-sdk-react'})}
-            passwordlessLoginCallbackURI={passwordlessCallback}
-        >
-            <MultiSiteProvider site={locals.site} locale={locals.locale} buildUrl={locals.buildUrl}>
-                <ChakraProvider theme={theme}>{children}</ChakraProvider>
-            </MultiSiteProvider>
-            <ReactQueryDevtools />
-        </CommerceApiProvider>
+        <>
+            <Seo>
+                <link rel="stylesheet" type="text/css" href={getAssetUrl('static/style.css')} />
+            </Seo>
+            <CommerceApiProvider
+                shortCode={commerceApiConfig.parameters.shortCode}
+                clientId={commerceApiConfig.parameters.clientId}
+                organizationId={commerceApiConfig.parameters.organizationId}
+                siteId={locals.site?.id}
+                locale={locals.locale?.id}
+                currency={locals.locale?.preferredCurrency}
+                redirectURI={`${appOrigin}/callback`}
+                proxy={`${appOrigin}${commerceApiConfig.proxyPath}`}
+                headers={headers}
+                defaultDnt={DEFAULT_DNT_STATE}
+                logger={createLogger({packageName: 'commerce-sdk-react'})}
+                passwordlessLoginCallbackURI={passwordlessCallback}
+            >
+                <MultiSiteProvider site={locals.site} locale={locals.locale} buildUrl={locals.buildUrl}>
+                    <ChakraProvider theme={theme}>{children}</ChakraProvider>
+                </MultiSiteProvider>
+                <ReactQueryDevtools />
+            </CommerceApiProvider>
+        </>
     )
 }
 
