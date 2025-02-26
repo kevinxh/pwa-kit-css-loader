@@ -35,6 +35,8 @@ import {
 import {useServerContext} from '@salesforce/pwa-kit-react-sdk/ssr/universal/hooks'
 import {useProductSearch} from '@salesforce/commerce-sdk-react'
 
+import './style.css'
+
 /**
  * This is the home page for Retail React App.
  * The page is created for demonstration purposes.
@@ -87,6 +89,7 @@ const Home = () => {
                     src: getAssetUrl('static/img/hero.png'),
                     alt: 'npx pwa-kit-create-app'
                 }}
+                className="test"
                 actions={
                     <Stack spacing={{base: 4, sm: 6}} direction={{base: 'column', sm: 'row'}}>
                         <Button

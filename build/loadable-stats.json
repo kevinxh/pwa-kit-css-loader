@@ -1,14 +1,17 @@
 {
   "name": "client",
-  "hash": "d3499cf56ba52940ad38",
+  "hash": "a89e0a7c6fe43c719a92",
   "publicPath": "",
   "outputPath": "/Users/kevin.he/dev/css/build",
   "assetsByChunkName": {
     "main": [
-      "main.js"
+      "main.js",
+      "main.f74431755c6fcc465210.hot-update.js"
     ],
     "pages-home": [
-      "pages-home.js"
+      "pages-home.css",
+      "pages-home.js",
+      "pages-home.f74431755c6fcc465210.hot-update.js"
     ],
     "pages-my-new-route": [
       "pages-my-new-route.js"
@@ -63,7 +66,7 @@
     {
       "type": "asset",
       "name": "vendor.js",
-      "size": 6124310,
+      "size": 6131222,
       "emitted": false,
       "comparedForEmit": false,
       "cached": true,
@@ -90,7 +93,7 @@
     {
       "type": "asset",
       "name": "main.js",
-      "size": 1243168,
+      "size": 1248501,
       "emitted": false,
       "comparedForEmit": false,
       "cached": true,
@@ -530,6 +533,31 @@
     },
     {
       "type": "asset",
+      "name": "pages-home.js",
+      "size": 13449,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "javascriptModule": false,
+        "related": {
+          "sourceMap": "pages-home.js.map"
+        }
+      },
+      "chunkNames": [
+        "pages-home"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "filteredRelated": 1,
+      "chunks": [
+        "pages-home"
+      ],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
       "name": "pages-social-login-redirect.js",
       "size": 13238,
       "emitted": false,
@@ -555,15 +583,17 @@
     },
     {
       "type": "asset",
-      "name": "pages-home.js",
-      "size": 12173,
+      "name": "pages-home.f74431755c6fcc465210.hot-update.js",
+      "size": 12328,
       "emitted": false,
       "comparedForEmit": false,
       "cached": true,
       "info": {
-        "javascriptModule": false,
+        "hotModuleReplacement": true,
+        "immutable": true,
+        "fullhash": "f74431755c6fcc465210",
         "related": {
-          "sourceMap": "pages-home.js.map"
+          "sourceMap": "pages-home.f74431755c6fcc465210.hot-update.js.map"
         }
       },
       "chunkNames": [
@@ -705,6 +735,57 @@
     },
     {
       "type": "asset",
+      "name": "main.f74431755c6fcc465210.hot-update.js",
+      "size": 360,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true,
+        "fullhash": "f74431755c6fcc465210",
+        "related": {
+          "sourceMap": "main.f74431755c6fcc465210.hot-update.js.map"
+        }
+      },
+      "chunkNames": [
+        "main"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "filteredRelated": 1,
+      "chunks": [
+        "main"
+      ],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
+      "name": "pages-home.css",
+      "size": 343,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "related": {
+          "sourceMap": "pages-home.css.map"
+        }
+      },
+      "chunkNames": [
+        "pages-home"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "filteredRelated": 1,
+      "chunks": [
+        "pages-home"
+      ],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
       "name": "_1242.js",
       "size": 284,
       "emitted": false,
@@ -725,6 +806,25 @@
         "_1242"
       ],
       "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
+      "name": "main.f74431755c6fcc465210.hot-update.json",
+      "size": 41,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true,
+        "fullhash": "f74431755c6fcc465210"
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "chunks": [],
+      "auxiliaryChunks": []
     }
   ],
   "namedChunkGroups": {
@@ -740,11 +840,14 @@
         },
         {
           "name": "main.js"
+        },
+        {
+          "name": "main.f74431755c6fcc465210.hot-update.js"
         }
       ],
       "filteredAssets": 0,
       "assetsSize": null,
-      "filteredAuxiliaryAssets": 2,
+      "filteredAuxiliaryAssets": 3,
       "auxiliaryAssetsSize": null,
       "children": {},
       "childAssets": {}
@@ -752,20 +855,30 @@
     "pages-home": {
       "name": "pages-home",
       "chunks": [
+        "vendor",
         "vendors-node_modules_salesforce_retail-react-app_app_pages_home_index_jsx",
         "pages-home"
       ],
       "assets": [
         {
+          "name": "vendor.js"
+        },
+        {
           "name": "vendors-node_modules_salesforce_retail-react-app_app_pages_home_index_jsx.js"
         },
         {
+          "name": "pages-home.css"
+        },
+        {
           "name": "pages-home.js"
+        },
+        {
+          "name": "pages-home.f74431755c6fcc465210.hot-update.js"
         }
       ],
       "filteredAssets": 0,
       "assetsSize": null,
-      "filteredAuxiliaryAssets": 2,
+      "filteredAuxiliaryAssets": 5,
       "auxiliaryAssetsSize": null,
       "children": {},
       "childAssets": {}
@@ -1111,7 +1224,8 @@
     {
       "id": "main",
       "files": [
-        "main.js"
+        "main.js",
+        "main.f74431755c6fcc465210.hot-update.js"
       ]
     },
     {
@@ -1123,7 +1237,9 @@
     {
       "id": "pages-home",
       "files": [
-        "pages-home.js"
+        "pages-home.css",
+        "pages-home.js",
+        "pages-home.f74431755c6fcc465210.hot-update.js"
       ]
     },
     {
